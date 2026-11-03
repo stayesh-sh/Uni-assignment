@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دانه | کافه قهوه تخصصی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4e9dc; --surface:#fff8f0; --ink:#2a1a12; --muted:#7a6454; --line:#d9c3aa;
+  --caramel:#b8742a; --mint:#2f8f77; --hero:#1e1410; --hero-ink:#f4e9dc; --on-caramel:#1e1410;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#17100c;--surface:#241812;--ink:#f4e9dc;--muted:#b9a592;--line:#3d2c21;--caramel:#e0a458;--mint:#7fd1b9;--hero:#0f0a07;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#17100c;--surface:#241812;--ink:#f4e9dc;--muted:#b9a592;--line:#3d2c21;--caramel:#e0a458;--mint:#7fd1b9;--hero:#0f0a07;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9;font-size:17px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--caramel);outline-offset:3px}
+h1,h2{font-family:"Lalezar","Vazirmatn",sans-serif;font-weight:400;line-height:1.4}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+.top{background:var(--hero);color:var(--hero-ink);border-radius:0 0 48px 48px}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo{font-family:"Lalezar",sans-serif;font-size:34px;color:#e0a458}
+nav{display:flex;gap:26px;font-weight:600;opacity:.85}
+nav a:hover{opacity:1}
+@media(max-width:680px){nav{display:none}}
+.btn{display:inline-block;padding:12px 30px;border-radius:999px;font-weight:800;background:#e0a458;color:#1e1410;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.out{background:transparent;color:inherit;border:2px solid currentColor}
+.btn.sm{padding:3px 18px;font-size:15px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:30px 0 80px}
+.hero h1{font-size:clamp(46px,7.5vw,84px)}
+.hero p{opacity:.8;max-width:28em;margin:12px 0 30px;font-size:18px}
+.act{display:flex;gap:14px;flex-wrap:wrap}
+
+.cupbox{position:relative;width:260px;height:260px;margin-inline:auto}
+.saucer{position:absolute;bottom:20px;left:10px;right:10px;height:34px;border-radius:50%;background:#f4e9dc;box-shadow:0 14px 0 rgba(0,0,0,.35)}
+.cup{position:absolute;bottom:40px;left:42px;width:170px;height:120px;background:#f4e9dc;border-radius:6px 6px 80px 80px}
+.cup::before{content:"";position:absolute;top:-10px;left:0;right:0;height:26px;border-radius:50%;background:#4a2a18;border:4px solid #f4e9dc}
+.cup::after{content:"";position:absolute;top:22px;right:-44px;width:56px;height:62px;border:14px solid #f4e9dc;border-radius:50%}
+.steam{position:absolute;bottom:170px;width:14px;height:70px;border-radius:14px;background:linear-gradient(to top,rgba(244,233,220,.55),transparent);opacity:0}
+.s1{left:92px}.s2{left:128px}.s3{left:164px}
+@media(prefers-reduced-motion:no-preference){
+  .steam{animation:rise 3.2s ease-in infinite}
+  .s2{animation-delay:1s}.s3{animation-delay:2s}
+}
+@keyframes rise{0%{transform:translateY(20px) scaleX(1);opacity:0}30%{opacity:.9}100%{transform:translateY(-50px) scaleX(2.2);opacity:0}}
+@media(prefers-reduced-motion:reduce){.steam{opacity:.5}.btn{transition:none}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.act{justify-content:center}}
+
+section{padding:60px 0}
+h2{font-size:clamp(32px,4.5vw,46px)}
+.sub{color:var(--muted);margin:2px 0 30px}
+
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px}
+.item{padding:12px 0}
+.row{display:flex;align-items:baseline;gap:10px;font-weight:800;font-size:19px}
+.row .d{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-5px)}
+.row .p{color:var(--caramel)}
+.item p{color:var(--muted);font-size:15px}
+@media(max-width:760px){.menu{grid-template-columns:1fr}}
+
+.roast{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px 28px}
+.card h3{font-family:"Lalezar",sans-serif;font-weight:400;font-size:28px;color:var(--caramel)}
+.card p{color:var(--muted)}
+.tag{display:inline-block;background:var(--mint);color:#fff;border-radius:999px;padding:0 14px;font-size:14px;font-weight:700;margin-top:10px}
+:root[data-theme="dark"] .tag{color:#0f0a07}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tag{color:#0f0a07}}
+@media(max-width:760px){.roast{grid-template-columns:1fr}}
+
+.visit{background:var(--hero);color:var(--hero-ink);border-radius:40px;padding:46px 34px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.visit strong{display:block;font-family:"Lalezar",sans-serif;font-weight:400;font-size:26px;color:#e0a458}
+.visit span{opacity:.85}
+@media(max-width:760px){.visit{grid-template-columns:1fr}}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:34px 0 26px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#top">دانه</a>
+      <nav><a href="#menu">منو</a><a href="#roast">برشته‌کاری</a><a href="#visit">آدرس</a></nav>
+      <a class="btn sm" href="#visit">رزرو میز</a>
+    </header>
+    <div class="hero" id="top">
+      <div>
+        <h1>قهوه‌ای که صبح را شروع می‌کند</h1>
+        <p>دانه‌های تک‌origin، برشته‌شده در همین کافه و دم‌شده با دست. یک فنجان بنوشید و کمی آرام بگیرید.</p>
+        <div class="act">
+          <a class="btn" href="#menu">دیدن منو</a>
+          <a class="btn out" href="#visit">آدرس کافه</a>
+        </div>
+      </div>
+      <div class="cupbox" aria-hidden="true">
+        <span class="steam s1"></span><span class="steam s2"></span><span class="steam s3"></span>
+        <div class="cup"></div><div class="saucer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="menu">
+    <h2>منوی امروز</h2>
+    <p class="sub">قیمت‌ها به تومان است</p>
+    <div class="menu">
+      <div class="item"><div class="row">اسپرسو<span class="d"></span><span class="p">۹۵,۰۰۰</span></div><p>دو شات، شیرین و کاراملی</p></div>
+      <div class="item"><div class="row">لاته<span class="d"></span><span class="p">۱۴۵,۰۰۰</span></div><p>اسپرسو با شیر بخارداده</p></div>
+      <div class="item"><div class="row">کاپوچینو<span class="d"></span><span class="p">۱۴۰,۰۰۰</span></div><p>فوم غلیظ و ابریشمی</p></div>
+      <div class="item"><div class="row">دمی V60<span class="d"></span><span class="p">۱۷۰,۰۰۰</span></div><p>روشن، میوه‌ای و تمیز</p></div>
+      <div class="item"><div class="row">موکا<span class="d"></span><span class="p">۱۶۰,۰۰۰</span></div><p>اسپرسو، شکلات تلخ و شیر</p></div>
+      <div class="item"><div class="row">آیس آمریکانو<span class="d"></span><span class="p">۱۳۵,۰۰۰</span></div><p>خنک و سبک برای ظهر</p></div>
+      <div class="item"><div class="row">کیک شکلات<span class="d"></span><span class="p">۱۲۰,۰۰۰</span></div><p>پخت همان روز</p></div>
+      <div class="item"><div class="row">کروسان کره‌ای<span class="d"></span><span class="p">۱۱۰,۰۰۰</span></div><p>تازه و ترد</p></div>
+    </div>
+  </section>
+
+  <section id="roast">
+    <div class="roast">
+      <div class="card"><h3>برشته‌کاری روزانه</h3><p>هر صبح مقدار کمی دانه برشته می‌کنیم تا عطرش در فنجان شما کامل باشد، نه در انبار.</p><span class="tag">امروز: اتیوپی ♦ کلمبیا</span></div>
+      <div class="card"><h3>دانه برای خانه</h3><p>دانه یا قهوه آسیاب‌شده را در بسته‌های ۲۵۰ گرمی ببرید و با روش دلخواهتان دم کنید.</p><span class="tag">از ۳۸۰,۰۰۰ تومان</span></div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="visit">
+      <div><strong>ساعت کاری</strong><span>همه روزه ۷ صبح تا ۱۱ شب</span></div>
+      <div><strong>آدرس</strong><span>تهران، خیابان نمونه، پلاک ۱۲</span></div>
+      <div><strong>رزرو میز</strong><span>۰۲۱-۰۰۰۰۰۰۰۰</span></div>
+    </div>
+  </section>
+
+  <div class="foot"><span>© ۱۴۰۵ دانه؛ کافه قهوه تخصصی</span><span>قهوه، کیک و کمی آرامش</span></div>
+</main>
+</body>
+</html>
